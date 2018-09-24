@@ -23,12 +23,23 @@ else
 fi
 
 cd "${SOURCE_DIR}"
+
 rm -rf target/doc
 (set -x; rustup run "$TOOLCHAIN" cargo update)
 (set -x; rustup run "$TOOLCHAIN" cargo doc --no-deps)
+
+echo > target/doc/src/build-info.txt "timestamp: $(date --rfc-2822)"
+echo >>target/doc/src/build-info.txt "toolchain: ${TOOLCHAIN}"
+echo >>target/doc/src/build-info.txt "rustc-version: $(rustup run $TOOLCHAIN rustc --version)"
+echo >>target/doc/src/build-info.txt "cargo-version: $(rustup run $TOOLCHAIN cargo --version)"
+
+echo > target/doc/index.html \
+    "<meta http-equiv=\"refresh\" content=\"0;URL=${PROJECT//-/_}/index.html\" />"
+
+cp -f Cargo.lock target/doc/src/Cargo.lock
+
 cd "$BASE_DIR"
 
 echo "copying..."
 mkdir -p "$TARGET_DIR"
 (set -x; rsync -av --delete --exclude '.lock' "${SOURCE_DIR}/target/doc/" "${TARGET_DIR}")
-echo "$TOOLCHAIN" > "${TARGET_DIR}/rust-toolchain"
