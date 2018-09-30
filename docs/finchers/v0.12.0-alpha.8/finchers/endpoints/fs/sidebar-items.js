@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["dir","Create an endpoint which serves files in the specified directory."],["file","Create an endpoint which serves a specified file on the file system."]],"struct":[["Dir",""],["File",""]]});

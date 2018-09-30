@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["optional","Create an endpoint which extracts a Cookie value."],["required","Create an endpoint which extracts a Cookie value."]],"struct":[["Optional",""],["Required",""]]});
