@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["renderer","Create a `Renderer` for rendering the value of context type which implements `askama::Template`."]],"struct":[["RenderEndpoint","An endpoint which renders the output of inner endpoint and convert it into an HTTP response."],["Renderer","The type for modifying the result rendered by Askama to an HTTP response."]]});
