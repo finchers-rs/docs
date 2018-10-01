@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["with_get_cx","Acquires a mutable reference to `TaskContext` from the current task context and executes the provided function using its value."]],"struct":[["ApplyContext","The contextual information during calling `Endpoint::apply()`."],["TaskContext","The contexual information per request during polling the future returned from endpoints."]]});

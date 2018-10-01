@@ -26,7 +26,7 @@ cd "${SOURCE_DIR}"
 
 rm -rf target/doc
 (set -x; rustup run "$TOOLCHAIN" cargo update)
-if [[ -n $FEATURES ]]; then
+if [[ -n ${FEATURES:-} ]]; then
     (set -x; rustup run "$TOOLCHAIN" cargo doc --features "${FEATURES}" --no-deps)
 else
     (set -x; rustup run "$TOOLCHAIN" cargo doc --no-deps)
@@ -34,7 +34,7 @@ fi
 
 echo > target/doc/src/build-info.txt "timestamp: $(date --rfc-2822)"
 echo >>target/doc/src/build-info.txt "toolchain: ${TOOLCHAIN}"
-if [[ -n $FEATURES ]]; then
+if [[ -n ${FEATURES:-} ]]; then
 echo >>target/doc/src/build-info.txt "features: ${FEATURES}"
 fi
 echo >>target/doc/src/build-info.txt "rustc-version: $(rustup run $TOOLCHAIN rustc --version)"

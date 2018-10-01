@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ApplyError","A type representing error values returned from `Endpoint::apply()`."]],"type":[["ApplyResult","A type alias of `Result<T, E>` with the error type fixed at `ApplyError`."]]});
