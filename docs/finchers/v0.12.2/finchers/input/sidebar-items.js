@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["EncodedStr","A percent-encoded string."],["Input","The contextual information with an incoming HTTP request."],["ReqBody","A type holding the instance of request body."]],"trait":[["FromEncodedStr","Trait representing the conversion from an encoded string."],["FromHeaderValue","Trait representing the conversion from a header value."]]});
